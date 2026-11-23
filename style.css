@@ -49,24 +49,24 @@ h2 em { font-style: normal; color: #789eaa; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 42px; }
 .section-heading h2 { margin-bottom: 0; }
 .section-heading > p { color: var(--muted); font-size: 13px; letter-spacing: .08em; }
-.character-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
-.character-card { background: #fff; }
-.character-art { height: 390px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 9px; }
-.character-blue .character-art { background: linear-gradient(145deg,#dcecf0,#b8d3dc); }
-.character-peach .character-art { background: linear-gradient(145deg,#f3e8e1,#e4d4cf); }
-.art-placeholder { color: rgba(49,76,87,.66); text-align: center; }
-.art-placeholder span { font-size: 15px; letter-spacing: .1em; }
-.art-placeholder small { font: 10px var(--sans); opacity: .7; }
-.character-caption { padding: 24px 30px 28px; }
-.character-caption > span { font: 9px var(--sans); letter-spacing: .2em; color: #91a6ac; }
-.character-caption h3 { font-size: 25px; font-weight: 500; letter-spacing: .15em; margin: 10px 0; }
-.character-caption p { font-size: 12px; color: var(--muted); }
+.character-list { display: flex; flex-direction: column; gap: 58px; }
+.character-row { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); align-items: center; gap: clamp(34px, 7vw, 92px); max-width: 930px; margin: 0 auto; width: 100%; }
+.character-row-xian { grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr); }
+.character-portrait { min-height: 440px; height:  min(48vw, 540px); display: flex; justify-content: center; align-items: end; overflow: hidden; position: relative; background: transparent; }
+.character-row-xian .character-portrait { background: transparent; }
+.character-portrait img { display: block; height: 100%; width: 100%; object-fit: contain; object-position: center bottom; }
+.character-description { padding: 34px 0; color: #52636b; }
+.character-number { font: 9px var(--sans); letter-spacing: .22em; color: #91a6ac; }
+.character-en { font: 10px var(--sans); letter-spacing: .24em; color: #789eaa; margin: 24px 0 4px; }
+.character-description h3 { font-size: clamp(28px, 3vw, 36px); font-weight: 500; letter-spacing: .18em; margin: 0; color: var(--ink); }
+.character-divider { width: 42px; height: 1px; background: #8baeba; margin: 24px 0; }
+.character-description p:not(.character-en) { font-size: 13px; line-height: 2.25; letter-spacing: .04em; color: #64767d; max-width: 440px; }
 .quote-band { text-align: center; padding: 95px 20px; background: #dcebef; color: #496976; }
 .quote-mark { font: 70px Georgia,serif; height: 55px; opacity: .5; }
 .quote-band p { font-size: clamp(21px,3vw,30px); line-height: 2; letter-spacing: .13em; }
 .quote-band span { font: 9px var(--sans); letter-spacing: .24em; color: #7898a2; }
-.gallery-grid { display: grid; grid-template-columns: 1.35fr 1fr; grid-template-rows: 190px 190px; gap: 16px; }
-.gallery-item { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; background: linear-gradient(135deg,#dce9e9,#c3d8dc); }
+.gallery-grid {display: grid;grid-template-columns: 2.08fr 1fr;gap: 16px;}
+.gallery-item { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; background: linear-gradient(135deg,#dce9e9,#c3d8dc);aspect-ratio: 16 / 9;width: 100%;overflow: hidden; }
 .gallery-item:nth-child(2) { background: linear-gradient(135deg,#e8e8df,#d3ddd8); }
 .gallery-item:nth-child(3) { background: linear-gradient(135deg,#e9e0db,#d9cfc9); }
 .gallery-large { grid-row: span 2; }
@@ -109,9 +109,46 @@ h2 em { font-style: normal; color: #789eaa; }
   .characters, .game-info { padding-left: 8%; padding-right: 8%; }
   .character-grid { grid-template-columns: 1fr; }
   .character-art { height: 330px; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 160px 160px; }
+  .gallery-grid {grid-template-columns: 1fr 1fr;}
   .gallery-large { grid-column: span 2; grid-row: auto; }
   .info-list div { grid-template-columns: 105px 1fr; }
   .update-entry { grid-template-columns: 1fr 20px; gap: 10px; }
   .update-entry time { grid-column: 1 / -1; }
+}
+
+
+.downloads { padding-top: 105px; padding-bottom: 110px; }
+.download-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.download-card { padding: 34px 36px 30px; background: #f1f6f5; border: 1px solid rgba(49,76,87,.10); }
+.download-platform { font: 10px var(--sans); letter-spacing: .24em; color: #789eaa; }
+.download-card h3 { margin: 16px 0 8px; font-size: 23px; font-weight: 500; letter-spacing: .1em; }
+.download-card p { margin: 0 0 24px; color: var(--muted); font-size: 13px; }
+.download-button { display: inline-flex; min-width: 170px; justify-content: center; align-items: center; padding: 13px 20px; background: #789eaa; color: white; font-size: 12px; letter-spacing: .1em; transition: background .2s; }
+.download-button:hover { background: #5f8794; }
+.download-button.is-disabled { background: #b9c7c9; color: #f8fbfa; cursor: not-allowed; pointer-events: none; }
+.download-card > small { display: block; margin-top: 13px; color: #96a4a7; font-size: 10px; }
+@media (max-width: 720px) {
+  .download-grid { grid-template-columns: 1fr; }
+  .download-card { padding: 28px 25px; }
+}
+
+/* Character rows: portrait-oriented original sprites, never cropped */
+.character-portrait img { object-fit: contain; }
+@media (max-width: 720px) {
+  .character-list { gap: 42px; }
+  .character-row, .character-row-xian { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .character-row-xian .character-description { order: 2; }
+  .character-row-xian .character-portrait { order: 1; }
+  .character-portrait { height: min(112vw, 470px); min-height: 330px; }
+  .character-description { padding: 10px 4px 18px; }
+  .character-en { margin-top: 16px; }
+  .character-divider { margin: 17px 0; }
+}
+.download-button { min-height: 46px; padding: 14px 25px; font-weight: 500; letter-spacing: .13em; }
+.download-button.is-disabled { opacity: .82; }
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

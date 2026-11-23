@@ -1,31 +1,25 @@
-# 《夏日重逢》官方网站（初版）
+# 《夏日重逢》官方网站（角色布局更新版）
+
+## 本次修改
+- 保留原版首页、故事、画廊、游戏信息、开发日志和整体配色。
+- 角色区改为交错双行：第一行左侧白九洲立绘、右侧简介；第二行左侧闲七灵简介、右侧立绘。
+- 使用纵向原始立绘比例，`object-fit: contain`，避免横向裁切。
+- 手机端自动改为纵向排列。
+- 保留 Windows / Android 下载入口，并调整按钮样式。
 
 ## 文件结构
-- `index.html`：网页内容
-- `style.css`：视觉样式与响应式布局
-- `script.js`：移动端导航交互与年份显示
-- `assets/images/`：放置正式图片资源
+- `index.html`
+- `style.css`
+- `script.js`
+- `assets/images/bai-jiuzhou.png`
+- `assets/images/xian-qiling.png`
 
-## 本地预览
-直接双击 `index.html`，即可在浏览器中预览。
-推荐使用 VS Code 编辑文件；后续也可以安装 Live Server 插件进行本地预览。
+## 部署
+将压缩包解压后，把其中的 `index.html`、`style.css`、`script.js`、`README.md` 和 `assets` 文件夹上传到 GitHub 仓库根目录，覆盖同名网页文件并新增图片资源。Netlify 会自动重新部署。
 
-## 部署到 Netlify Drop
-1. 解压整个压缩包。
-2. 打开 https://app.netlify.com/drop
-3. 将解压后的 `夏日重逢官网` 文件夹拖入页面。
-4. 等待部署完成，打开 Netlify 提供的网址。
+## 下载按钮说明
+目前没有提供 Windows 安装包、Android APK 或正式下载地址，因此两个下载按钮仍显示“暂未开放下载”，不会指向不存在的文件。拿到正式文件并上传到可靠托管位置后，再将按钮链接替换为真实下载地址。
 
-注意：上传时应上传包含 `index.html` 的项目文件夹内容，不要只上传某一个 HTML 文件。
-
-## 替换图片
-目前角色立绘和画廊使用 CSS 占位区域，尚未使用正式图片。
-建议将图片放入 `assets/images/`，然后在 `index.html` 中把对应占位 div 替换为 `<img>`，并在 `style.css` 中设置图片尺寸与裁切方式。
-
-## 发布前需要确认
-- 故事简介是否符合最终剧本
-- 角色立绘、CG、截图是否获得使用授权
-- 游戏版本、发布日期、下载地址是否准确
-- 是否需要添加联系邮箱、社交平台和隐私说明
-
-本初版不包含游戏本体、下载文件或后端服务。
+## 角色图片来源
+- `bai-jiuzhou.png`：资料库中的 `b9z cf.png`
+- `xian-qiling.png`：资料库中的 `xtm cn.png`
