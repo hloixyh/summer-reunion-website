@@ -1,2 +1,31 @@
-# summer-reunion-website
-Official website of Summer Reunion
+# 《夏日重逢》官方网站（初版）
+
+## 文件结构
+- `index.html`：网页内容
+- `style.css`：视觉样式与响应式布局
+- `script.js`：移动端导航交互与年份显示
+- `assets/images/`：放置正式图片资源
+
+## 本地预览
+直接双击 `index.html`，即可在浏览器中预览。
+推荐使用 VS Code 编辑文件；后续也可以安装 Live Server 插件进行本地预览。
+
+## 部署到 Netlify Drop
+1. 解压整个压缩包。
+2. 打开 https://app.netlify.com/drop
+3. 将解压后的 `夏日重逢官网` 文件夹拖入页面。
+4. 等待部署完成，打开 Netlify 提供的网址。
+
+注意：上传时应上传包含 `index.html` 的项目文件夹内容，不要只上传某一个 HTML 文件。
+
+## 替换图片
+目前角色立绘和画廊使用 CSS 占位区域，尚未使用正式图片。
+建议将图片放入 `assets/images/`，然后在 `index.html` 中把对应占位 div 替换为 `<img>`，并在 `style.css` 中设置图片尺寸与裁切方式。
+
+## 发布前需要确认
+- 故事简介是否符合最终剧本
+- 角色立绘、CG、截图是否获得使用授权
+- 游戏版本、发布日期、下载地址是否准确
+- 是否需要添加联系邮箱、社交平台和隐私说明
+
+本初版不包含游戏本体、下载文件或后端服务。
